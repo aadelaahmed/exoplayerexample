@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.exoplayerexample"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // dependency for exoplayer
+
+    implementation "com.google.android.exoplayer:exoplayer:2.17.1"
+
+    // for core support in exoplayer.
+
+    implementation "com.google.android.exoplayer:exoplayer-core:2.17.1"
+
+    // for adding dash support in our exoplayer.
+
+    implementation "com.google.android.exoplayer:exoplayer-dash:2.17.1"
+
+    // for adding hls support in exoplayer.
+
+    implementation "com.google.android.exoplayer:exoplayer-hls:2.17.1"
+
+    // for smooth streaming of video in our exoplayer.
+
+    implementation "com.google.android.exoplayer:exoplayer-smoothstreaming:2.17.1"
+
+    // for generating default ui of exoplayer
+
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.17.1"
+}
